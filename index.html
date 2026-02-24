@@ -1,0 +1,381 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zen Cafe | Premium Coffee Experience</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* =====================
+   THEME VARIABLES
+===================== */
+
+:root{
+  --dark-brown:#2b1d14;
+  --brown:#3a261a;
+  --cream:#f5e9da;
+  --beige:#e6d2b5;
+  --gold:#c6a75e;
+  --text:#ffffff;
+  --shadow:0 10px 30px rgba(0,0,0,0.25);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:var(--dark-brown);
+  color:var(--text);
+  line-height:1.6;
+  overflow-x:hidden;
+}
+
+h1,h2,h3{
+  font-family:'Playfair Display',serif;
+  letter-spacing:0.5px;
+}
+
+section{
+  padding:70px 8%;
+}
+
+/* =====================
+   NAVBAR
+===================== */
+
+header{
+  position:fixed;
+  width:100%;
+  top:0;
+  background:rgba(43,29,20,0.95);
+  backdrop-filter:blur(10px);
+  z-index:1000;
+}
+
+.nav-container{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 8%;
+}
+
+.logo{
+  font-family:'Playfair Display',serif;
+  font-size:22px;
+  color:var(--gold);
+}
+
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:30px;
+}
+
+nav a{
+  text-decoration:none;
+  color:var(--cream);
+  font-size:14px;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:var(--gold);
+}
+
+/* Hamburger */
+
+.menu-toggle{
+  display:none;
+  font-size:26px;
+  cursor:pointer;
+  color:var(--gold);
+}
+
+/* =====================
+   HERO
+===================== */
+
+.hero{
+  height:100vh;
+  background:
+  linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.75)),
+  url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085') center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:0 5%;
+}
+
+.hero-content{
+  max-width:750px;
+  animation:fadeUp 1.5s ease;
+}
+
+.hero h1{
+  font-size:52px;
+  margin-bottom:20px;
+}
+
+.hero p{
+  color:var(--beige);
+  margin-bottom:30px;
+}
+
+.btn{
+  padding:12px 28px;
+  border:none;
+  cursor:pointer;
+  font-size:14px;
+  letter-spacing:1px;
+  transition:0.4s;
+}
+
+.btn-primary{
+  background:var(--gold);
+  color:black;
+}
+
+.btn-primary:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 20px rgba(198,167,94,0.4);
+}
+
+.btn-outline{
+  border:1px solid var(--cream);
+  background:transparent;
+  color:var(--cream);
+}
+
+.btn-outline:hover{
+  background:var(--cream);
+  color:black;
+}
+
+/* =====================
+   ABOUT
+===================== */
+
+.about{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
+}
+
+.about img{
+  width:100%;
+  border-radius:12px;
+  box-shadow:var(--shadow);
+}
+
+.about-card{
+  background:rgba(255,255,255,0.05);
+  padding:30px;
+  border-radius:12px;
+  box-shadow:var(--shadow);
+  backdrop-filter:blur(10px);
+}
+
+/* =====================
+   FEATURES
+===================== */
+
+.features{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+
+.feature-card{
+  background:rgba(255,255,255,0.05);
+  padding:25px;
+  border-radius:12px;
+  text-align:center;
+  box-shadow:var(--shadow);
+  transition:0.4s;
+}
+
+.feature-card:hover{
+  transform:translateY(-8px);
+}
+
+/* =====================
+   GALLERY
+===================== */
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:15px;
+}
+
+.gallery img{
+  width:100%;
+  border-radius:10px;
+  transition:0.4s;
+}
+
+.gallery img:hover{
+  transform:scale(1.08);
+}
+
+/* =====================
+   TESTIMONIALS
+===================== */
+
+.testimonial{
+  background:rgba(255,255,255,0.05);
+  padding:25px;
+  border-radius:10px;
+  margin-top:20px;
+  box-shadow:var(--shadow);
+}
+
+/* =====================
+   FOOTER
+===================== */
+
+footer{
+  background:#1b120c;
+  padding:40px 8%;
+  text-align:center;
+  color:var(--beige);
+}
+
+footer h3{
+  color:var(--gold);
+  margin-bottom:10px;
+}
+
+/* =====================
+   ANIMATIONS
+===================== */
+
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(20px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+
+@media(max-width:900px){
+
+  .about{
+    grid-template-columns:1fr;
+  }
+
+  nav ul{
+    position:absolute;
+    top:70px;
+    right:0;
+    background:var(--brown);
+    flex-direction:column;
+    width:200px;
+    padding:20px;
+    display:none;
+  }
+
+  nav ul.active{
+    display:flex;
+  }
+
+  .menu-toggle{
+    display:block;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-container">
+    <div class="logo">Zen Cafe</div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <nav>
+      <ul id="navLinks">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Menu</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Luxury Coffee Moments in Mumbai</h1>
+    <p>Family-friendly premium cafe experience with rich flavors and elegant ambience.</p>
+    <button class="btn btn-primary">View Menu</button>
+    <button class="btn btn-outline">Book Table</button>
+  </div>
+</section>
+
+<section class="about">
+  <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93">
+  <div class="about-card">
+    <h2>Why Choose Zen Cafe?</h2>
+    <p>We bring together premium coffee beans, cozy ambience, and expert craftsmanship to create unforgettable family-friendly experiences in Mumbai.</p>
+  </div>
+</section>
+
+<section>
+  <h2 style="text-align:center;margin-bottom:30px;">Premium Features</h2>
+  <div class="features">
+    <div class="feature-card">
+      <h3>Quality Beans</h3>
+      <p>Hand-selected, ethically sourced premium coffee beans.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Cozy Ambience</h3>
+      <p>Warm, elegant and perfect for families and friends.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Expert Baristas</h3>
+      <p>Crafted by professionals with passion and precision.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 style="text-align:center;margin-bottom:30px;">Gallery</h2>
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096">
+    <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e" alt="cofee"
+    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93">
+    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" alt="Coffee">
+  </div>
+</section>
+
+<section>
+  <h2 style="text-align:center;">What Our Guests Say</h2>
+  <div class="testimonial">
+    “Beautiful atmosphere and rich coffee flavors. Perfect for family outings.”
+  </div>
+</section>
+
+<footer>
+  <h3>Zen Cafe</h3>
+  <p>Mumbai | Open Daily 8AM - 11PM</p>
+  <p>Follow us on Instagram • Facebook</p>
+</footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById("navLinks").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
